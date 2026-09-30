@@ -1,0 +1,24 @@
+# NOVEX Apache Security Rules
+
+# Block direct access to sensitive files
+<FilesMatch "^(db|security)\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block .env, .git, .sql, .log, .md files
+<FilesMatch "\.(env|git|sql|log|md|json|lock|bak|old|swp|ini|yml|yaml)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent PHP errors from showing in production (uncomment when live)
+# php_flag display_errors off
+
+# Force HTTPS in production (uncomment when you have SSL)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -1,0 +1,34 @@
+# Config with credentials — NEVER upload
+config_mail.php
+.env
+.env.local
+
+# Database backups
+*.sql
+*.sql.gz
+dumps/
+backups/
+
+# Cache and temp
+*.log
+*.tmp
+*.cache
+/tmp/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node/Composer
+node_modules/
+vendor/
+composer.lock
+
+# Uploads
+uploads/
